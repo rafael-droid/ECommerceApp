@@ -1,6 +1,10 @@
 package pl.project.ecommerceapp
 
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,35 +16,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import pl.project.ecommerceapp.ui.theme.ECommerceAppTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : Activity() {
+
+    private lateinit var button_list: Button
+    private lateinit var button_login: Button
+
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            ECommerceAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        button_list = findViewById(R.id.button_list)
+        button_login = findViewById(R.id.button_login)
+
+        button_login.setOnClickListener {
+            var loginActivity: Intent = Intent(applicationContext,LoginActivity::class.java)
+            startActivity(loginActivity)
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ECommerceAppTheme {
-        Greeting("Android")
+
     }
 }
