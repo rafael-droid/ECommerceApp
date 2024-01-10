@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ECommerceApp</string>
     <string name="title_activity_login">Logowanie</string>
+    <string name="title_activity_registration">Rejestracja</string>
 </resources>

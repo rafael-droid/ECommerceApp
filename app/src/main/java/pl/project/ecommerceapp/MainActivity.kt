@@ -22,7 +22,7 @@ class MainActivity : Activity() {
     private lateinit var button_login: Button
 
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,10 +30,13 @@ class MainActivity : Activity() {
         button_list = findViewById(R.id.button_list)
         button_login = findViewById(R.id.button_login)
 
+
+
         button_login.setOnClickListener {
-            var loginActivity: Intent = Intent(applicationContext,LoginActivity::class.java)
+            val loginActivity: Intent = Intent(applicationContext,LoginActivity::class.java)
             startActivity(loginActivity)
         }
+
 
 
 
