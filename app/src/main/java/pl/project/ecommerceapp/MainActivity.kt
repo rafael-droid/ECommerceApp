@@ -36,6 +36,10 @@ class MainActivity : Activity() {
             val loginActivity: Intent = Intent(applicationContext,LoginActivity::class.java)
             startActivity(loginActivity)
         }
+        button_list.setOnClickListener {
+            val listActivity: Intent = Intent(applicationContext,ListActivity::class.java)
+            startActivity(listActivity)
+        }
 
 
 
